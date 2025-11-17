@@ -2,10 +2,9 @@
  * API utilities for communicating with the backend
  */
 import axios, { AxiosInstance, AxiosError } from 'axios';
-import Constants from 'expo-constants';
 
 // API Configuration
-const API_URL = Constants.expoConfig?.extra?.apiUrl || 'http://localhost:8000';
+const API_URL = process.env.EXPO_PUBLIC_API_URL || 'http://localhost:8000';
 
 // Create axios instance
 const apiClient: AxiosInstance = axios.create({
