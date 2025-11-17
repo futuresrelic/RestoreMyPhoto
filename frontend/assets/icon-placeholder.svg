@@ -1,0 +1,35 @@
+<svg width="1024" height="1024" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background gradient -->
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#E5C158;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#D4AF37;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#B8941F;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="sparkleGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FFFFFF;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#F5F5F5;stop-opacity:0.8" />
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1024" height="1024" rx="226" fill="url(#bgGradient)"/>
+
+  <!-- Photo frame icon -->
+  <rect x="256" y="256" width="512" height="512" rx="32" fill="#1A1A1A" opacity="0.8"/>
+  <rect x="288" y="288" width="448" height="448" rx="24" fill="#2A2A2A"/>
+
+  <!-- Mountain/photo representation -->
+  <path d="M 320 640 L 420 480 L 520 560 L 620 400 L 704 560 L 704 688 L 320 688 Z" fill="#D4AF37" opacity="0.6"/>
+
+  <!-- Sun/circle in corner -->
+  <circle cx="620" cy="380" r="40" fill="url(#sparkleGradient)"/>
+
+  <!-- Sparkle/magic effect -->
+  <g transform="translate(850, 200)">
+    <path d="M 0,-60 L 12,-12 L 60,0 L 12,12 L 0,60 L -12,12 L -60,0 L -12,-12 Z" fill="url(#sparkleGradient)"/>
+  </g>
+  <g transform="translate(150, 800) scale(0.6)">
+    <path d="M 0,-60 L 12,-12 L 60,0 L 12,12 L 0,60 L -12,12 L -60,0 L -12,-12 Z" fill="url(#sparkleGradient)"/>
+  </g>
+</svg>
