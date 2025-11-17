@@ -6,6 +6,9 @@ import axios, { AxiosInstance, AxiosError } from 'axios';
 // API Configuration
 const API_URL = process.env.EXPO_PUBLIC_API_URL || 'http://localhost:8000';
 
+// Debug: Log the API URL being used
+console.log('🔗 API URL:', API_URL);
+
 // Create axios instance
 const apiClient: AxiosInstance = axios.create({
   baseURL: API_URL,
