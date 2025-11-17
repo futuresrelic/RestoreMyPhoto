@@ -4,11 +4,12 @@
 import axios, { AxiosInstance, AxiosError } from 'axios';
 import Constants from 'expo-constants';
 
-// API Configuration - read from app.config.js
-const API_URL = Constants.expoConfig?.extra?.apiUrl || 'https://restoremyphoto-backend.onrender.com';
+// API Configuration - HARDCODED for production
+const API_URL = 'https://restoremyphoto-backend.onrender.com';
 
 // Debug: Log the API URL being used
 console.log('🔗 API URL:', API_URL);
+console.log('🔗 API configured and ready');
 
 // Create axios instance
 const apiClient: AxiosInstance = axios.create({
