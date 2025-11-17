@@ -42,8 +42,8 @@ class ImageRestorer:
         self.realesrgan_model = None
         self.colorize_model = None
 
-        # Load models on initialization
-        # COMMENTED OUT for free tier deployment - models will lazy load on first use
+        # Skip loading models on startup for free tier
+        # COMMENTED OUT to avoid out-of-memory on free tier deployment
         # self._load_models()
 
     def _load_models(self):
