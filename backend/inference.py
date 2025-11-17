@@ -43,7 +43,8 @@ class ImageRestorer:
         self.colorize_model = None
 
         # Load models on initialization
-        self._load_models()
+        # COMMENTED OUT for free tier deployment - models will lazy load on first use
+        # self._load_models()
 
     def _load_models(self):
         """Load all AI models"""
