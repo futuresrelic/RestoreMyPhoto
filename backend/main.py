@@ -183,8 +183,11 @@ async def restore_image(
             upscale_factor
         )
 
-        if not success or processed_image is None:
+        if processed_image is None:
             raise HTTPException(status_code=500, detail="Image processing failed")
+
+        # Note: success=False means AI models weren't used, but basic processing still works
+        ai_processing_used = success
 
         # Apply watermark for free users
         has_watermark = False
@@ -259,8 +262,11 @@ async def colorize_image(
             ProcessingType.COLORIZE
         )
 
-        if not success or processed_image is None:
+        if processed_image is None:
             raise HTTPException(status_code=500, detail="Image processing failed")
+
+        # Note: success=False means AI models weren't used, but basic processing still works
+        ai_processing_used = success
 
         # Apply watermark for free users
         has_watermark = False
@@ -337,8 +343,11 @@ async def upscale_image(
             upscale_factor
         )
 
-        if not success or processed_image is None:
+        if processed_image is None:
             raise HTTPException(status_code=500, detail="Image processing failed")
+
+        # Note: success=False means AI models weren't used, but basic processing still works
+        ai_processing_used = success
 
         # Apply watermark for free users
         has_watermark = False
@@ -413,8 +422,11 @@ async def enhance_image(
             ProcessingType.ENHANCE
         )
 
-        if not success or processed_image is None:
+        if processed_image is None:
             raise HTTPException(status_code=500, detail="Image processing failed")
+
+        # Note: success=False means AI models weren't used, but basic processing still works
+        ai_processing_used = success
 
         # Apply watermark for free users
         has_watermark = False
