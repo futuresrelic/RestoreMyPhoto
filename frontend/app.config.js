@@ -1,0 +1,61 @@
+module.exports = {
+  expo: {
+    name: "RestoreMyPhoto",
+    slug: "restore-my-photo",
+    version: "1.0.0",
+    orientation: "portrait",
+    icon: "./assets/icon.png",
+    userInterfaceStyle: "light",
+    splash: {
+      image: "./assets/splash.png",
+      resizeMode: "contain",
+      backgroundColor: "#1a1a1a"
+    },
+    assetBundlePatterns: [
+      "**/*"
+    ],
+    ios: {
+      supportsTablet: true,
+      bundleIdentifier: "com.restoremyphoto.app",
+      infoPlist: {
+        NSPhotoLibraryUsageDescription: "This app needs access to your photo library to restore your photos.",
+        NSCameraUsageDescription: "This app needs access to your camera to take photos for restoration."
+      }
+    },
+    android: {
+      adaptiveIcon: {
+        foregroundImage: "./assets/adaptive-icon.png",
+        backgroundColor: "#1a1a1a"
+      },
+      package: "com.restoremyphoto.app",
+      permissions: [
+        "READ_EXTERNAL_STORAGE",
+        "WRITE_EXTERNAL_STORAGE",
+        "CAMERA"
+      ]
+    },
+    web: {
+      favicon: "./assets/favicon.png"
+    },
+    scheme: "restoremyphoto",
+    plugins: [
+      "expo-router",
+      [
+        "@stripe/stripe-react-native",
+        {
+          merchantIdentifier: "merchant.com.restoremyphoto.app",
+          enableGooglePay: true
+        }
+      ]
+    ],
+    extra: {
+      router: {
+        origin: false
+      },
+      eas: {
+        projectId: "your-project-id"
+      },
+      apiUrl: process.env.EXPO_PUBLIC_API_URL || "https://restoremyphoto-backend.onrender.com"
+    }
+  }
+};

@@ -2,9 +2,10 @@
  * API utilities for communicating with the backend
  */
 import axios, { AxiosInstance, AxiosError } from 'axios';
+import Constants from 'expo-constants';
 
-// API Configuration
-const API_URL = process.env.EXPO_PUBLIC_API_URL || 'http://localhost:8000';
+// API Configuration - read from app.config.js
+const API_URL = Constants.expoConfig?.extra?.apiUrl || 'https://restoremyphoto-backend.onrender.com';
 
 // Debug: Log the API URL being used
 console.log('🔗 API URL:', API_URL);
