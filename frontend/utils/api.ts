@@ -8,8 +8,10 @@ import Constants from 'expo-constants';
 const API_URL = 'https://restoremyphoto-backend.onrender.com';
 
 // Debug: Log the API URL being used
-console.log('🔗 API URL:', API_URL);
-console.log('🔗 API configured and ready');
+console.warn('========================================');
+console.warn('🔗 API URL:', API_URL);
+console.warn('🔗 API configured and ready');
+console.warn('========================================');
 
 // Create axios instance
 const apiClient: AxiosInstance = axios.create({
