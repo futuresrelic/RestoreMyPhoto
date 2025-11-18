@@ -121,8 +121,9 @@ export const useStore = create<AppState>((set, get) => ({
 
       set({ userId });
 
-      // Load subscription data
-      await get().loadSubscription();
+      // TEMPORARILY DISABLED - Skip subscription loading to test backend connection
+      // await get().loadSubscription();
+      console.warn('⚠️ Subscription loading disabled for testing');
     } catch (error) {
       console.error('Error initializing user:', error);
     }
