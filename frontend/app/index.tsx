@@ -1,7 +1,7 @@
 /**
  * Home screen - Main entry point
  */
-import React from 'react';
+import React, { useEffect } from 'react';
 import {
   View,
   Text,
@@ -18,10 +18,17 @@ import { useStore } from '../state/store';
 import { Button } from '../components/Button';
 import { ActionCard } from '../components/ActionCard';
 import { colors, spacing, typography, borderRadius } from '../utils/theme';
+import axios from 'axios';
 
 export default function HomeScreen() {
   const router = useRouter();
   const { isPremium, freeRepairsRemaining, setOriginalImage, setProcessingType } = useStore();
+
+  // DEBUG: Show API URL when app loads
+  useEffect(() => {
+    const apiUrl = axios.defaults.baseURL || 'NOT SET';
+    Alert.alert('DEBUG API URL', apiUrl);
+  }, []);
 
   const pickImage = async (processingType: 'restore' | 'colorize' | 'upscale' | 'enhance') => {
     // Check free repairs limit
